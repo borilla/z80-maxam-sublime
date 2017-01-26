@@ -1,0 +1,6 @@
+{
+	"color_scheme": "Packages/z80/custom-theme.tmTheme",
+	"extensions": [ "asm", "z80" ],
+	"ignored_packages": [ "All Autocomplete", "Vintage" ],
+	"tab_size": 8
+}

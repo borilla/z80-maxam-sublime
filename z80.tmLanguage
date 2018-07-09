@@ -3,11 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Z80 - Maxam</string>
+	<string>Maxam Z80</string>
 	<key>scopeName</key>
 	<string>source.z80.maxam</string>
 	<key>fileTypes</key>
 	<array>
+		<string>asm</string>
 		<string>z80</string>
 	</array>
 	<key>uuid</key>
@@ -52,7 +53,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\b(im|ex|exx|djnz|jr(\s+(c|nc|nz|z))?|ld|ldi|ldir|ldd|ldh|push|pop|add|adc|sub|sbc|and|or|xor|cp|inc|dec|daa|cpl|rlca|rla|rrca|rra|rlc|rl|rrc|rr|sla|swap|sra|srl|bit|res|set|ccf|scf|nop|halt|stop|di|ei|jp|call(\s+(c|m|nc|nz|p|pe|po|z))?|ret(\s+(C|M|NC|NZ|P|PE|PO|Z))?|reti|rst|otdr|otir|out|outi|in|ind|ini|inir)\b</string>
+			<string>(?i)\b(im|ex|exx|djnz|jp(\s+(c|m|nc|nz|p|pe|po|z))?|jr(\s+(c|nc|nz|z))?|ld|ldi|ldir|ldd|ldh|neg|push|pop|add|adc|sub|sbc|and|or|xor|cp|inc|dec|daa|cpl|rlca|rla|rrca|rra|rlc|rl|rrc|rr|sla|swap|sra|srl|bit|res|set|ccf|scf|nop|halt|stop|di|ei|call(\s+(c|m|nc|nz|p|pe|po|z))?|ret(\s+(C|M|NC|NZ|P|PE|PO|Z))?|reti|rst|otdr|otir|out|outi|in|ind|ini|inir)\b</string>
 			<key>name</key>
 			<string>keyword.other.mnemonic.z80</string>
 		</dict>

@@ -7,4 +7,5 @@ I haven't got around to finding out how to release it as a proper package but, o
 ## Notes
 Was written for Sublime Text 2 but may also work in Sublime Text 3. I use it to write [Maxam](http://www.cpcwiki.eu/index.php/Maxam_1.5)/[WinAPE](http://www.winape.net/) code so it may need slight tweaking to work properly with other assemblers. It's pretty unsophisticated at the moment but it does the job
 
-If you're interested in writing z80 for the Amstrad CPC then you may find [z80.html](https://cdn.rawgit.com/borilla/z80-maxam-sublime/82d12531/z80.html) useful. It contains a list of available instructions and "nop" timings for each
+If you're interested in writing z80 for the Amstrad CPC then you may find [z80.html](https://borilla.co.uk/z80.html)
+useful. It contains a list of available instructions and "nop" (microsecond) timings for each

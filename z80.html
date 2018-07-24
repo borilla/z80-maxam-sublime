@@ -204,6 +204,38 @@
 		display: none;
 	}
 
+	svg {
+		text-align: center;
+		height: 32px;
+		width: 140px;
+		fill: transparent;
+		stroke: #333;
+		stroke-width: 1;
+		shape-rendering: crispEdges;
+		vertical-align: middle;
+	}
+
+	#svg-sla,
+	#svg-sll,
+	#svg-srl {
+		height: 22px;
+	}
+
+	svg text {
+		fill: #333;
+		stroke: none;
+		font-family: sans-serif;
+		font-size: 14px;
+		font-weight: normal;
+		alignment-baseline: central;
+		dominant-baseline: central;
+		text-anchor: middle;
+	}
+
+	svg .arrow {
+		marker-end: url(#svg-arrow-head);
+	}
+
 	@keyframes delay-appear {
 		0% { opacity: 0; }
 		99% { opacity: 0; }
@@ -318,6 +350,41 @@
 	<li><a href="#xor">xor</a></li>
 </ul>
 </div>
+
+<svg style="width: 0; height: 0; position: absolute">
+	<defs>
+		<marker id="svg-arrow-head" markerWidth="8" markerHeight="8" stroke-width="1" refX="8" refY="4" orient="auto">
+			<path d="M 0 0 L 8 4 L 0 8" />
+		</marker>
+
+		<g id="svg-register">
+			<rect x="-30" y="-10" width="60" height="20"/>
+			<text x="-20">7</text>
+			<text x="20">0</text>
+		</g>
+
+		<g id="svg-carry">
+			<rect x="-10" y="-10" width="20" height="20"/>
+			<text>C</text>
+		</g>
+
+		<g id="svg-shift-left">
+			<use href="#svg-register" x="10" />
+			<use href="#svg-carry" x="-50" />
+			<path d="M 60 0 h -20" class="arrow" />
+			<path d="M 20 0 h -20" class="arrow" />
+			<path d="M -20 0 h -20" class="arrow" />
+		</g>
+
+		<g id="svg-shift-right">
+			<use href="#svg-register" x="-10" />
+			<use href="#svg-carry" x="50" />
+			<path d="M -60 0 h 20" class="arrow" />
+			<path d="M -20 0 h 20" class="arrow" />
+			<path d="M 20 0 h 20" class="arrow" />
+		</g>
+	</defs>
+</svg>
 
 <table class="instruction-table" id="adc">
 <thead>
@@ -1319,6 +1386,14 @@
 <table class="instruction-table" id="rl">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:rl" title="rl at z80-heaven">rl</a></th></tr>
+<tr>
+<th colspan="3">
+	<svg viewBox="-70 -21 140 32" id="svg-rl">
+		<use href="#svg-shift-left" x="5" />
+		<path d="M -55 0 h -10 v -20 h 130 v 20" />
+	</svg>
+</th>
+</tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
@@ -1338,6 +1413,14 @@
 <table class="instruction-table" id="rla">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:rla" title="rla at z80-heaven">rla</a></th></tr>
+<tr>
+<th colspan="3">
+	<svg viewBox="-70 -21 140 32" id="svg-rla">
+		<use href="#svg-shift-left" x="5" />
+		<path d="M -55 0 h -10 v -20 h 130 v 20" />
+	</svg>
+</th>
+</tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
@@ -1348,6 +1431,14 @@
 <table class="instruction-table" id="rlc">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:rlc" title="rlc at z80-heaven">rlc</a></th></tr>
+<tr>
+<th colspan="3">
+	<svg viewBox="-70 -21 140 32" id="svg-rlc">
+		<use href="#svg-shift-left" />
+		<path d="M -28 0 v -20 h 88 v 20" />
+	</svg>
+</th>
+</tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
@@ -1367,6 +1458,14 @@
 <table class="instruction-table" id="rlca">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:rlca" title="rlca at z80-heaven">rlca</a></th></tr>
+<tr>
+<th colspan="3">
+	<svg viewBox="-70 -21 140 32" id="svg-rlca">
+		<use href="#svg-shift-left" />
+		<path d="M -28 0 v -20 h 88 v 20" />
+	</svg>
+</th>
+</tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
@@ -1387,6 +1486,14 @@
 <table class="instruction-table" id="rr">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:rr" title="rr at z80-heaven">rr</a></th></tr>
+<tr>
+<th colspan="3">
+	<svg viewBox="-70 -21 140 32" id="svg-rr">
+		<use href="#svg-shift-right" x="-5" />
+		<path d="M 55 0 h 10 v -20 h -130 v 20" />
+	</svg>
+</th>
+</tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
@@ -1406,6 +1513,14 @@
 <table class="instruction-table" id="rra">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:rra" title="rra at z80-heaven">rra</a></th></tr>
+<tr>
+<th colspan="3">
+	<svg viewBox="-70 -21 140 32" id="svg-rra">
+		<use href="#svg-shift-right" x="-5" />
+		<path d="M 55 0 h 10 v -20 h -130 v 20" />
+	</svg>
+</th>
+</tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
@@ -1416,6 +1531,14 @@
 <table class="instruction-table" id="rrc">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:rrc" title="rrc at z80-heaven">rrc</a></th></tr>
+<tr>
+<th colspan="3">
+	<svg viewBox="-70 -21 140 32" id="svg-rrc">
+		<use href="#svg-shift-right" />
+		<path d="M 28 0 v -20 h -88 v 20" />
+	</svg>
+</th>
+</tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
@@ -1435,6 +1558,14 @@
 <table class="instruction-table" id="rrca">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:rrca" title="rrca at z80-heaven">rrca</a></th></tr>
+<tr>
+<th colspan="3">
+	<svg viewBox="-70 -21 140 32" id="svg-rrc">
+		<use href="#svg-shift-right" />
+		<path d="M 28 0 v -20 h -88 v 20" />
+	</svg>
+</th>
+</tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
@@ -1599,6 +1730,12 @@
 <table class="instruction-table" id="sla">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:sla" title="sla at z80-heaven">sla</a></th></tr>
+<tr><th colspan="3">
+	<svg viewBox="-70 -11 140 22" id="svg-sla">
+		<use href="#svg-shift-left" x="-5" />
+		<text x="62">0</text>
+	</svg>
+</th></tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
@@ -1618,6 +1755,12 @@
 <table class="instruction-table" id="sll">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:sll" title="sll at z80-heaven">sll</a></th></tr>
+<tr><th colspan="3">
+	<svg viewBox="-70 -11 140 22" id="svg-sll">
+		<use href="#svg-shift-left" x="-5" />
+		<text x="62">1</text>
+	</svg>
+</th></tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
@@ -1637,6 +1780,12 @@
 <table class="instruction-table" id="sra">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:sra" title="sra at z80-heaven">sra</a></th></tr>
+<tr><th colspan="3">
+	<svg viewBox="-70 -21 140 32" id="svg-sra">
+		<use href="#svg-shift-right" />
+		<path d="M -60 0 v -20 h 30 v 10" />
+	</svg>
+</th></tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
@@ -1656,6 +1805,12 @@
 <table class="instruction-table" id="srl">
 <thead>
 <tr><th colspan="3"><a href="http://z80-heaven.wikidot.com/instructions-set:srl" title="srl at z80-heaven">srl</a></th></tr>
+<tr><th colspan="3">
+	<svg viewBox="-70 -11 140 22" id="svg-srl">
+		<use href="#svg-shift-right" x="5" />
+		<text x="-62">0</text>
+	</svg>
+</th></tr>
 <tr><th>instruction</th><th>nops</th><th>bytes</th></tr>
 </thead>
 <tbody>
